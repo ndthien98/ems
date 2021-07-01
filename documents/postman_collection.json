@@ -1,0 +1,2751 @@
+{
+	"info": {
+		"_postman_id": "2cd301bd-07e0-4f9d-935c-acfcadb79115",
+		"name": "EMS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Create Account",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"thienthi2en2\",\n    \"password\": \"honghong\",\n    \"rePassword\": \"honghong\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Account Admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"admin\",\n    \"password\": \"admin\",\n    \"rePassword\": \"admin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/register-admin",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"register-admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Account Student",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"student10\",\n    \"password\": \"student\",\n    \"rePassword\": \"student\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/register-student",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"register-student"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Account Teacher",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"2teacher\",\n    \"password\": \"teacher\",\n    \"rePassword\": \"teacher\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/register-teacher",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"register-teacher"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login Admin",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const body = pm.response.json()",
+									"pm.environment.set(\"token\", body.token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"admin\",\n    \"password\": \"admin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login Student",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const body = pm.response.json()",
+									"pm.environment.set(\"token\", body.token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"student10\",\n    \"password\": \"student\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login Teacher",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const body = pm.response.json()",
+									"pm.environment.set(\"token\", body.token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"2teacher\",\n    \"password\": \"teacher\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Current Account",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/auth",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Password",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"oldPassword\": \"admin\",\n    \"newPassword\": \"admin\",\n    \"rePassword\": \"admin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/change-password/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"change-password",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RefreshToken",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const body = pm.response.json()",
+									"pm.environment.set(\"token\", body.token);",
+									"pm.environment.set(\"refreshToken\", body.refreshToken);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "refreshToken",
+								"value": "{{refreshToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "refreshToken",
+									"value": "{{refreshToken}}",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/refresh-token",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"refresh-token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/auth/verify",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"verify"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Account",
+			"item": [
+				{
+					"name": "Get Curent Account",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/account/current",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"account",
+								"current"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Account (phone and email)",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"email@email\",\n    \"phone\": \"0123123123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/account",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"account"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Account",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/account",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"account"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Class",
+			"item": [
+				{
+					"name": "Get All Class",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/class",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"class"
+							],
+							"query": [
+								{
+									"key": "size",
+									"value": "1000",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1000",
+									"disabled": true
+								},
+								{
+									"key": "keyword",
+									"value": "thien",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Class By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/class/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"class",
+								":id"
+							],
+							"query": [
+								{
+									"key": "size",
+									"value": "1000",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1000",
+									"disabled": true
+								},
+								{
+									"key": "keyword",
+									"value": "thien",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Class By ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"address\": \"701-B2\",\n    \"status\": \"ACTIVE\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/class/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"class",
+								":id"
+							],
+							"query": [
+								{
+									"key": "size",
+									"value": "1000",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1000",
+									"disabled": true
+								},
+								{
+									"key": "keyword",
+									"value": "thien",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Class",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"departmentName\": \"Bộ môn CNPM\",\n    \"address\": \"701-B1\",\n    \"status\": \"ACTIVE\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/class",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"class"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Class",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"departmentName\": \"Bộ môn CNPM\",\n    \"address\": \"701-B1\",\n    \"status\": \"ACTIVE\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/class/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"class",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Company",
+			"item": [
+				{
+					"name": "Get All Company",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/company?size=2&page=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"company"
+							],
+							"query": [
+								{
+									"key": "size",
+									"value": "2"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "keyword",
+									"value": "thien",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Company By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/company/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"company",
+								":id"
+							],
+							"query": [
+								{
+									"key": "size",
+									"value": "1000",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1000",
+									"disabled": true
+								},
+								{
+									"key": "keyword",
+									"value": "thien",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Company By ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"address\": \"701-B2\",\n    \"status\": \"ACTIVE\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/company/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"company",
+								":id"
+							],
+							"query": [
+								{
+									"key": "size",
+									"value": "1000",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1000",
+									"disabled": true
+								},
+								{
+									"key": "keyword",
+									"value": "thien",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Company",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"companyName\": \"Bộ môn CNPM 4\",\n    \"website\": \"701-B1\",\n    \"phone\": \"ưerwer\",\n    \"email\": \"qưeqwe\",\n    \"address\": \"adw\",\n    \"contactName\": \"abc\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/company",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"company"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Company",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"departmentName\": \"Bộ môn CNPM\",\n    \"address\": \"701-B1\",\n    \"status\": \"ACTIVE\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/company/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"company",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Course",
+			"item": [
+				{
+					"name": "Get All Course",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/course",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"course"
+							],
+							"query": [
+								{
+									"key": "size",
+									"value": "1000",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1000",
+									"disabled": true
+								},
+								{
+									"key": "keyword",
+									"value": "thien",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Course By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/course/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"course",
+								":id"
+							],
+							"query": [
+								{
+									"key": "size",
+									"value": "1000",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1000",
+									"disabled": true
+								},
+								{
+									"key": "keyword",
+									"value": "thien",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "302ca2c0-6113-4c01-bde5-376d36a6bbb4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Course By ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"address\": \"701-B2\",\n    \"status\": \"ACTIVE\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/course/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"course",
+								":id"
+							],
+							"query": [
+								{
+									"key": "size",
+									"value": "1000",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1000",
+									"disabled": true
+								},
+								{
+									"key": "keyword",
+									"value": "thien",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Course",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"departmentName\": \"Bộ môn CNPM\",\n    \"address\": \"701-B1\",\n    \"status\": \"ACTIVE\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/course",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"course"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Course",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"departmentName\": \"Bộ môn CNPM\",\n    \"address\": \"701-B1\",\n    \"status\": \"ACTIVE\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/course/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"course",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Department",
+			"item": [
+				{
+					"name": "Get All Department",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/department?size=5",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"department"
+							],
+							"query": [
+								{
+									"key": "size",
+									"value": "5"
+								},
+								{
+									"key": "page",
+									"value": "1000",
+									"disabled": true
+								},
+								{
+									"key": "keyword",
+									"value": "thien",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Department By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/department/8026e3ea-fb5d-469c-84fc-e9ff53fd7342",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"department",
+								"8026e3ea-fb5d-469c-84fc-e9ff53fd7342"
+							],
+							"query": [
+								{
+									"key": "size",
+									"value": "1000",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1000",
+									"disabled": true
+								},
+								{
+									"key": "keyword",
+									"value": "thien",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Department By ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"address\": \"701-B2\",\n    \"status\": \"ACTIVE\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/department/0a47a110-8630-11eb-9872-0242ac130002",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"department",
+								"0a47a110-8630-11eb-9872-0242ac130002"
+							],
+							"query": [
+								{
+									"key": "size",
+									"value": "1000",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1000",
+									"disabled": true
+								},
+								{
+									"key": "keyword",
+									"value": "thien",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Department",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"departmentName\": \"Bộ môn CNPM\",\n    \"address\": \"701-B1\",\n    \"status\": \"ACTIVE\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/department",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"department"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Department",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"departmentName\": \"Bộ môn CNPM\",\n    \"address\": \"701-B1\",\n    \"status\": \"ACTIVE\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/department/8026e3ea-fb5d-469c-84fc-e9ff53fd7342",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"department",
+								"8026e3ea-fb5d-469c-84fc-e9ff53fd7342"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Group",
+			"item": [
+				{
+					"name": "Get All Group",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/group",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"group"
+							],
+							"query": [
+								{
+									"key": "size",
+									"value": "1000",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1000",
+									"disabled": true
+								},
+								{
+									"key": "keyword",
+									"value": "thien",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Group By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/group/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"group",
+								":id"
+							],
+							"query": [
+								{
+									"key": "size",
+									"value": "1000",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1000",
+									"disabled": true
+								},
+								{
+									"key": "keyword",
+									"value": "thien",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Group By ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"address\": \"701-B2\",\n    \"status\": \"ACTIVE\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/group/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"group",
+								":id"
+							],
+							"query": [
+								{
+									"key": "size",
+									"value": "1000",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1000",
+									"disabled": true
+								},
+								{
+									"key": "keyword",
+									"value": "thien",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Group",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"departmentName\": \"Bộ môn CNPM\",\n    \"address\": \"701-B1\",\n    \"status\": \"ACTIVE\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/group",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"group"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Group",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"departmentName\": \"Bộ môn CNPM\",\n    \"address\": \"701-B1\",\n    \"status\": \"ACTIVE\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/group/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"group",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Program",
+			"item": [
+				{
+					"name": "Get All Program",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/program",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"program"
+							],
+							"query": [
+								{
+									"key": "size",
+									"value": "1000",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1000",
+									"disabled": true
+								},
+								{
+									"key": "keyword",
+									"value": "thien",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Program By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/program/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"program",
+								":id"
+							],
+							"query": [
+								{
+									"key": "size",
+									"value": "1000",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1000",
+									"disabled": true
+								},
+								{
+									"key": "keyword",
+									"value": "thien",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Program By ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"address\": \"701-B2\",\n    \"status\": \"ACTIVE\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/program/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"program",
+								":id"
+							],
+							"query": [
+								{
+									"key": "size",
+									"value": "1000",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1000",
+									"disabled": true
+								},
+								{
+									"key": "keyword",
+									"value": "thien",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Program",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"departmentName\": \"Bộ môn CNPM\",\n    \"address\": \"701-B1\",\n    \"status\": \"ACTIVE\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/program",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"program"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Program",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"departmentName\": \"Bộ môn CNPM\",\n    \"address\": \"701-B1\",\n    \"status\": \"ACTIVE\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/program/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"program",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Project",
+			"item": [
+				{
+					"name": "Get All Project",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/project",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"project"
+							],
+							"query": [
+								{
+									"key": "size",
+									"value": "1000",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1000",
+									"disabled": true
+								},
+								{
+									"key": "keyword",
+									"value": "thien",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Project By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/project/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"project",
+								":id"
+							],
+							"query": [
+								{
+									"key": "size",
+									"value": "1000",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1000",
+									"disabled": true
+								},
+								{
+									"key": "keyword",
+									"value": "thien",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Project By ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"address\": \"701-B2\",\n    \"status\": \"ACTIVE\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/project/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"project",
+								":id"
+							],
+							"query": [
+								{
+									"key": "size",
+									"value": "1000",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1000",
+									"disabled": true
+								},
+								{
+									"key": "keyword",
+									"value": "thien",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Project",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"departmentName\": \"Bộ môn CNPM\",\n    \"address\": \"701-B1\",\n    \"status\": \"ACTIVE\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/project",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"project"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Project",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"departmentName\": \"Bộ môn CNPM\",\n    \"address\": \"701-B1\",\n    \"status\": \"ACTIVE\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/project/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"project",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Request",
+			"item": [
+				{
+					"name": "Get All Request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/request",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"request"
+							],
+							"query": [
+								{
+									"key": "size",
+									"value": "1000",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1000",
+									"disabled": true
+								},
+								{
+									"key": "keyword",
+									"value": "thien",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Request By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/request/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"request",
+								":id"
+							],
+							"query": [
+								{
+									"key": "size",
+									"value": "1000",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1000",
+									"disabled": true
+								},
+								{
+									"key": "keyword",
+									"value": "thien",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1a8e42e2-81c6-47c9-b15f-99889e54b9ea"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Request By ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"studentID\":\"6ea4660e-70c4-4fd0-a364-20e8b8247cfe\", \n    \"topicID1\":\"0fbaf3eb-deb6-44e4-910f-32660d76393c\", \n    \"topicID2\":\"5a6a3912-3866-4bf8-b3c1-e0ef50b34b8c\", \n    \"topicID3\":\"94c3310b-5193-441a-bbad-d0a48ac015a3\", \n    \"timeType\":\"Fulltime\", \n    \"SIS_status\":\"Đã đăng ký\", \n    \"englishScore\":4, \n    \"creditDebt\":6, \n    \"semester\": \"Học kỳ 1\",\n    \"note\": \"test sửa request\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/request/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"request",
+								":id"
+							],
+							"query": [
+								{
+									"key": "size",
+									"value": "1000",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1000",
+									"disabled": true
+								},
+								{
+									"key": "keyword",
+									"value": "thien",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1a8e42e2-81c6-47c9-b15f-99889e54b9ea"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"studentID\":\"6ea4660e-70c4-4fd0-a364-20e8b8247cfe\", \n    \"topicID1\":\"0fbaf3eb-deb6-44e4-910f-32660d76393c\", \n    \"topicID2\":\"5a6a3912-3866-4bf8-b3c1-e0ef50b34b8c\", \n    \"topicID3\":\"94c3310b-5193-441a-bbad-d0a48ac015a3\", \n    \"timeType\":\"Fulltime\", \n    \"SIS_status\":\"Đã đăng ký\", \n    \"englishScore\":4, \n    \"creditDebt\":6, \n    \"semester\": \"Học kỳ 1\",\n    \"note\": \"ghi chú\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/request/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"request",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Request",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"departmentName\": \"Bộ môn CNPM\",\n    \"address\": \"701-B1\",\n    \"status\": \"ACTIVE\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/request/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"request",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Teacher Request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/request/teacher?level=3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"request",
+								"teacher"
+							],
+							"query": [
+								{
+									"key": "level",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Student Request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/request/student",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"request",
+								"student"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Student",
+			"item": [
+				{
+					"name": "Get All Student",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/student",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"student"
+							],
+							"query": [
+								{
+									"key": "size",
+									"value": "1000",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1000",
+									"disabled": true
+								},
+								{
+									"key": "keyword",
+									"value": "thien",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Student By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/student/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"student",
+								":id"
+							],
+							"query": [
+								{
+									"key": "size",
+									"value": "1000",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1000",
+									"disabled": true
+								},
+								{
+									"key": "keyword",
+									"value": "thien",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "cfd45679-640d-4e50-b402-b9d401cb05ad"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Student By ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"studentID\": \"cfd45679-640d-4e50-b402-b9d401cb05ad\",\n    \"accountID\": \"8eb0fd60-88df-47c0-9285-ba8b7aac6743\",\n    \"programID\": \"99048a8b-2d2b-48ae-8537-b420a6ec3af6\",\n    \"studentName\": \"Nguyễn Đức Đạt\",\n    \"studentNumber\": \"20168652\",\n    \"gender\": \"Nam\",\n    \"schoolEmail\": \"dat.nd168652@sis.hust.edu.vn\",\n    \"facebookLink\": \"https://www.facebook.com/dat.nd0802\",\n    \"cvLink\": \"https://google.com\",\n    \"country\": \"Việt Nam\",\n    \"province\": \"Hà Nội\",\n    \"address\": \"Chùa may mắn\",\n    \"create_time\": \"2021-03-29T22:22:05.000Z\",\n    \"update_time\": \"2021-03-29T22:22:05.000Z\",\n    \"inYear\": \"K60\",\n    \"username\": \"student1\",\n    \"email\": null,\n    \"phone\": null\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/student/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"student",
+								":id"
+							],
+							"query": [
+								{
+									"key": "size",
+									"value": "1000",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1000",
+									"disabled": true
+								},
+								{
+									"key": "keyword",
+									"value": "thien",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "cfd45679-640d-4e50-b402-b9d401cb05ad"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Student",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"departmentName\": \"Bộ môn CNPM\",\n    \"address\": \"701-B1\",\n    \"status\": \"ACTIVE\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/student",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"student"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Student",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"departmentName\": \"Bộ môn CNPM\",\n    \"address\": \"701-B1\",\n    \"status\": \"ACTIVE\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/student/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"student",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Teacher",
+			"item": [
+				{
+					"name": "Get All Teacher",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/teacher",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"teacher"
+							],
+							"query": [
+								{
+									"key": "size",
+									"value": "1000",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1000",
+									"disabled": true
+								},
+								{
+									"key": "keyword",
+									"value": "thien",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Teacher By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/teacher/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"teacher",
+								":id"
+							],
+							"query": [
+								{
+									"key": "size",
+									"value": "1000",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1000",
+									"disabled": true
+								},
+								{
+									"key": "keyword",
+									"value": "thien",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Teacher By ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"teacherName\": \"Vinh\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/teacher/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"teacher",
+								":id"
+							],
+							"query": [
+								{
+									"key": "size",
+									"value": "1000",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1000",
+									"disabled": true
+								},
+								{
+									"key": "keyword",
+									"value": "thien",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6d8aaa58-8166-4dc4-974d-b3ba5a914604"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Teacher",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"departmentName\": \"Bộ môn CNPM\",\n    \"address\": \"701-B1\",\n    \"status\": \"ACTIVE\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/teacher",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"teacher"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Teacher",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"departmentName\": \"Bộ môn CNPM\",\n    \"address\": \"701-B1\",\n    \"status\": \"ACTIVE\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/teacher/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"teacher",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Accept Request",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/teacher/accept?requestID=7d79843e-e74e-4667-8c68-85044541c6c9",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"teacher",
+								"accept"
+							],
+							"query": [
+								{
+									"key": "requestID",
+									"value": "7d79843e-e74e-4667-8c68-85044541c6c9"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reject  Request",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/teacher/reject?requestID=1a8e42e2-81c6-47c9-b15f-99889e54b9ea",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"teacher",
+								"reject"
+							],
+							"query": [
+								{
+									"key": "requestID",
+									"value": "1a8e42e2-81c6-47c9-b15f-99889e54b9ea"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Topic",
+			"item": [
+				{
+					"name": "Get All Topic",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/topic",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"topic"
+							],
+							"query": [
+								{
+									"key": "size",
+									"value": "1000",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1000",
+									"disabled": true
+								},
+								{
+									"key": "keyword",
+									"value": "thien",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Topic By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/topic/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"topic",
+								":id"
+							],
+							"query": [
+								{
+									"key": "size",
+									"value": "1000",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1000",
+									"disabled": true
+								},
+								{
+									"key": "keyword",
+									"value": "thien",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "0fbaf3eb-deb6-44e4-910f-32660d76393c"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Topic By ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"teacherID\": \"6d8aaa58-8166-4dc4-974d-b3ba5a914604\",\n    \"companyID\": \"4a89765b-439f-41d1-a475-b02788c7d32b\",\n    \"topicName\": \"Topic Name 5\",\n    \"description\": \"ddaay la topic\",\n    \"maxStudent\": \"12\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/topic/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"topic",
+								":id"
+							],
+							"query": [
+								{
+									"key": "size",
+									"value": "1000",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1000",
+									"disabled": true
+								},
+								{
+									"key": "keyword",
+									"value": "thien",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "0fbaf3eb-deb6-44e4-910f-32660d76393c"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Topic",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"teacherID\": \"6d8aaa58-8166-4dc4-974d-b3ba5a914604\",\n    \"companyID\": \"4a89765b-439f-41d1-a475-b02788c7d32b\",\n    \"topicName\": \"Topic Name 5\",\n    \"description\":\"ddaay la topic\",\n    \"maxStudent\": \"12\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/topic",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"topic"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Topic",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"departmentName\": \"Bộ môn CNPM\",\n    \"address\": \"701-B1\",\n    \"status\": \"ACTIVE\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/topic/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"topic",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Media",
+			"item": [
+				{
+					"name": "Upload File",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/Users/thiennd/Downloads/log price.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/file/upload",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"file",
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get File",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/uploads/log price.png",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"uploads",
+								"log price.png"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "System params",
+			"item": [
+				{
+					"name": "Get All Company ID with Name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/system/all-company-id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"system",
+								"all-company-id"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Course ID with Name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/system/all-course-id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"system",
+								"all-course-id"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Department ID with Name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/system/all-department-id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"system",
+								"all-department-id"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Program ID with Name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/system/all-program-id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"system",
+								"all-program-id"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Check Health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}",
+					"host": [
+						"{{url}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"variable": [
+		{
+			"key": "url",
+			"value": "localhost:9000"
+		},
+		{
+			"key": "token",
+			"value": ""
+		}
+	]
+}
